@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyFlow UZ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📚 StudyFlow UZ</h1>
+    <p>O'qishni oson rejalashtiring!</p>
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <h2>Mening vazifalarim</h2>
+
+      <div class="statistics">
+        <p>Jami: <span id="total">0</span></p>
+        <p>Bajarilgan: <span id="completed">0</span></p>
+      </div>
+
+      <form id="taskForm">
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="Yangi vazifa..."
+          required
+        >
+        <input type="date" id="taskDate">
+        <button type="submit">+ Qo'shish</button>
+      </form>
+
+      <ul id="taskList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>StudyFlow UZ | Open Source Project</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
