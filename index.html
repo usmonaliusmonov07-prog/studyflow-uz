@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StudyFlow UZ</title>
- <link rel="stylesheet" href="style.css?v=2">
+ <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <header>
@@ -24,6 +24,31 @@
         <p>Jami: <span id="total">0</span></p>
         <p>Bajarilgan: <span id="completed">0</span></p>
       </div>
+      
+<!-- StudyFlow 3.0 - Progress -->
+<div class="progress-head">
+  <span>📊 Vazifalar bajarilishi</span>
+  <strong id="progressPercent">0%</strong>
+</div>
+
+<div class="progress-track"
+     id="progressTrack"
+     role="progressbar"
+     aria-label="Vazifalar bajarilishi"
+     aria-valuemin="0"
+     aria-valuemax="100"
+     aria-valuenow="0">
+  <div id="progressFill"></div>
+</div>
+
+<!-- Vazifalarni qidirish -->
+<input
+  type="search"
+  id="searchInput"
+  placeholder="🔎 Vazifalarni qidirish..."
+  aria-label="Vazifalarni qidirish"
+  autocomplete="off"
+>
 
       <form id="taskForm">
         <input
@@ -44,6 +69,6 @@
     <p>StudyFlow UZ | Open Source Project</p>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
