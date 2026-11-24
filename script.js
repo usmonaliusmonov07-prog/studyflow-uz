@@ -181,3 +181,75 @@ themeToggle.addEventListener("click", () => {
 });
 
 updateThemeButton();
+
+// StudyFlow UZ 3.0
+// Progress va qidiruv
+
+const searchBox =
+  document.getElementById("searchInput");
+
+const progressFill =
+  document.getElementById("progressFill");
+
+const progressPercent =
+  document.getElementById("progressPercent");
+
+const progressTrack =
+  document.getElementById("progressTrack");
+
+// Progress va qidiruvni yangilash
+function refreshDashboardExtras() {
+  const completedTasks = tasks.filter(
+    task => task.completed
+  ).length;
+
+  const percent = tasks.length === 0
+    ? 0
+    : Math.round(
+        completedTasks / tasks.length * 100
+      );
+
+  progressPercent.textContent = percent + "%";
+  progressFill.style.width = percent + "%";
+
+  progressTrack.setAttribute(
+    "aria-valuenow",
+    percent
+  );
+
+  // Qidiruv
+  const query = searchBox.value
+    .trim()
+    .toLocaleLowerCase();
+
+  taskList.querySelectorAll("li").forEach(li => {
+    const title = li.querySelector(
+      ".task-info strong"
+    );
+
+    if (!title) return;
+
+    const matches = title.textContent
+      .toLocaleLowerCase()
+      .includes(query);
+
+    li.style.display = matches ? "" : "none";
+  });
+}
+
+// Eski renderTasks funksiyasini saqlaymiz
+const originalRenderTasks = renderTasks;
+
+renderTasks = function() {
+  originalRenderTasks();
+  refreshDashboardExtras();
+};
+
+// Qidiruv yozilganda ishlaydi
+searchBox.addEventListener(
+  "input",
+  refreshDashboardExtras
+);
+
+// Dastlabki ma'lumotlarni chiqarish
+refreshDashboardExtras();
