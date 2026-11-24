@@ -202,3 +202,77 @@ footer {
     width: 100%;
   }
 }
+
+/* StudyFlow UZ - Dark Mode */
+
+#themeToggle {
+  margin-top: 22px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+#themeToggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+body,
+header,
+.dashboard,
+.statistics p,
+#taskList li,
+input {
+  transition: background-color 0.3s,
+              color 0.3s,
+              border-color 0.3s;
+}
+
+body.dark-mode {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.dark-mode header {
+  background: linear-gradient(135deg,
+    #1e1b4b, #4c1d95);
+}
+
+.dark-mode .dashboard {
+  background: #1e293b;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.3);
+}
+
+.dark-mode .statistics p {
+  background: #334155;
+  color: #f8fafc;
+}
+
+.dark-mode .statistics span {
+  color: #a5b4fc;
+}
+
+.dark-mode input {
+  background: #334155;
+  border-color: #475569;
+  color: white;
+}
+
+.dark-mode input::placeholder {
+  color: #cbd5e1;
+}
+
+.dark-mode #taskList li {
+  background: #334155;
+  border-color: #475569;
+}
+
+.dark-mode .task-info small {
+  color: #cbd5e1;
+}
+
+.dark-mode footer {
+  color: #94a3b8;
+}
