@@ -144,3 +144,40 @@ taskForm.addEventListener("submit", event => {
 
 // Sahifa ochilganda vazifalarni ko'rsatish
 renderTasks();
+
+// StudyFlow UZ - Dark Mode
+
+const themeToggle =
+  document.getElementById("themeToggle");
+
+const savedTheme =
+  localStorage.getItem("studyflow_theme");
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
+}
+
+function updateThemeButton() {
+  const isDark =
+    document.body.classList.contains("dark-mode");
+
+  themeToggle.textContent = isDark
+    ? "☀️ Light Mode"
+    : "🌙 Dark Mode";
+}
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+
+  const isDark =
+    document.body.classList.contains("dark-mode");
+
+  localStorage.setItem(
+    "studyflow_theme",
+    isDark ? "dark" : "light"
+  );
+
+  updateThemeButton();
+});
+
+updateThemeButton();
